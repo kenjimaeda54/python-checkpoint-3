@@ -3,13 +3,13 @@ tuplaStudents = [
         "name": "",
         "rm": "",
         "serie": "",
-        "workshop": []
     },
 
 ],
 
 [listStudents] = list(tuplaStudents)
 
+listStudents.append
 
 createTellStory = [""]
 singLanguage = [""]
@@ -133,6 +133,13 @@ workShopAfternon = [
 
 # numbersMY = list(map(lambda x: x*2, listNumber))
 
+# lista = ["pera"]
+
+# listStudents.append({
+#     "workshop": lista
+# })
+
+# print(listStudents)
 
 def initial(selected):
     if(selected == 0):
@@ -162,7 +169,8 @@ def initial(selected):
                 listStudents.append({
                     "name": studentsName,
                     "rm": studentsRm,
-                    "serie": studentsSerie
+                    "serie": studentsSerie,
+                    "workshop": []
                 }),
 
                 initial(0)
@@ -179,37 +187,92 @@ def initial(selected):
                     getSerieStudent = str(students["serie"])
                     [getWorkShopMorning] = list(
                         map(lambda students: students[getSerieStudent], workShopMorning))
-                    print("Segue abaixo as oficinais no periodo da manha")
+                    print("0 --> Segue abaixo as oficinais no periodo da manha")
                     i = 0
                     if(i == len(getWorkShopMorning)):
                         print(i, "-->", getWorkShopMorning[i])
-                        printAftermon(getSerieStudent)
+                        printAftermon(getSerieStudent,
+                                      getWorkShopMorning, requestRm)
                     else:
                         while(i <= len(getWorkShopMorning)):
                             print(i, "-->", getWorkShopMorning[i])
                             i += 1
                             if(i == len(getWorkShopMorning)):
-                                return printAftermon(getSerieStudent)
+                                return printAftermon(getSerieStudent, getWorkShopMorning, requestRm)
 
-            def printAftermon(getSerieStudent):
+            def printAftermon(getSerieStudent, getWorkShopMorning, requestRm):
                 i = 0
                 [getWorkShopAftermon] = list(
                     map(lambda students: students[getSerieStudent], workShopAfternon))
-                print("Segue abaixo as oficinais no periodo do verpertino")
+                print("\n 1--> Segue abaixo as oficinais no periodo do verpertino")
                 if(i == len(getWorkShopAftermon)):
                     print(i, "-->", getWorkShopAftermon[i])
-                    return getChoseUser()
+                    return getChoseUser(getSerieStudent, getWorkShopAftermon, getWorkShopMorning, requestRm)
                 else:
                     while(i <= len(getWorkShopAftermon)):
                         print(i, "-->", getWorkShopAftermon[i])
                         i += 1
                         if(i <= len(getWorkShopAftermon)):
-                            return getChoseUser()
+                            return getChoseUser(getSerieStudent, getWorkShopAftermon, getWorkShopMorning, requestRm)
 
-            def getChoseUser():
-                chose = int(
-                    input("Selecione os numeros de acordo com a opcao ao lado dos nomes"))
-                print(chose)
+            def getChoseUser(series, workShopAfternon, workShopMorning, requestRm):
+                selectedPeriod = int(input(
+                    "\nPor favor selecione 0 para oficina do periodo manha ou 1 para vespertino: "))
+                print(selectedPeriod)
+                if(selectedPeriod != 0 and selectedPeriod != 1):
+                    print("Opção invalida")
+                    getChoseUser(series, workShopAfternon,
+                                 workShopMorning, requestRm)
+                elif(selectedPeriod == 0):
+                    selectedWorkshop = int(input(
+                        "Agora digite o numero que esta ao lado esquerdo da oficina que voce deseja cadastrar: "))
+                    if(selectedWorkshop > len(workShopMorning)):
+                        print(
+                            "Opção invalida Selecione numero de acordo com os valores na esquerda da oficina")
+                        getChoseUser(series, workShopAfternon,
+                                     workShopMorning, requestRm)
+                    else:
+                        workshop = workShopMorning[selectedWorkshop]
+                        # listWorkshop = ("workshop", workshop)
+
+                        def getListOfRm(x):
+                            if(x["rm"] == requestRm):
+                                if(len(x["workshop"]) == 2):
+                                    print(
+                                        "Aluno ja atingiu a quantidade maxima permitida")
+                                    initial(0)
+                                else:
+                                    x.setdefault(
+                                        "workshop", []).append(workshop)
+
+                        list(filter(getListOfRm, listStudents))
+                        print("Cadastro com sucesso!")
+                        initial(0)
+                elif(selectedPeriod == 1):
+                    selectedWorkshop = int(input(
+                        "Agora digite o numero que esta ao lado esquerdo da oficina que voce deseja cadastrar: "))
+                    if(selectedWorkshop > len(workShopMorning)):
+                        print(
+                            "Opção invalida Selecione numero de acordo com os valores na esquerda da oficina")
+                        getChoseUser(series, workShopAfternon,
+                                     workShopMorning, requestRm)
+                    else:
+                        workshop = workShopAfternon[selectedWorkshop]
+                    # listWorkshop = ("workshop", workshop)
+
+                        def getListOfRm(x):
+                            if(x["rm"] == requestRm):
+                                if(len(x["workshop"]) == 2):
+                                    print(
+                                        "Aluno ja atingiu a quantidade maxima permitida")
+                                    initial(0)
+                                else:
+                                    x.setdefault(
+                                        "workshop", []).append(workshop)
+
+                    list(filter(getListOfRm, listStudents))
+                    print("Cadastro com sucesso!")
+                    initial(0)
             list(map(getSerieStudent, listStudents))
         # getWorkshop = list(
         #     map(lambda students: students == requestRm, workShopMorning))
