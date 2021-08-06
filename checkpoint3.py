@@ -6,6 +6,7 @@ tuplaStudents = [
         "name": "",
         "rm": "",
         "serie": "",
+        "workshop": [""]
     },
 
 ],
@@ -372,9 +373,24 @@ def initial(selected):
                 "\nALuno não cadastrado.Por favor procurar a coordenação do Fundamental 1 ")
             initial(5)
 
-    # if(selected == 3):
-    #     print("Numero 3 foi chamado")
-    #     initial(0)
+    if(selected == 3):
+        selectedOption = int(
+            input("Selecione 1 para listar por aluno ou 2 por lista de oficina"))
+        if(selectedOption == 1):
+            print("***** Alunos inscritos – Ordem: Alfabética (nome) *****")
+            newList = sorted(listStudents, key=lambda student: student["name"])
+            getRm = list(map(lambda x: x["rm"], newList))
+            getName = list(map(lambda x: x["name"], newList))
+            getSerie = list(map(lambda x: x["serie"], newList))
+            getWorkShop = list(map(lambda x: x["workshop"], newList))
+            print("RM:", getRm, "-", getName, "-", getSerie)
+            print("Oficina")
+            print(getWorkShop)
+            initial(5)
+
+        else:
+            print("Por favor repita a operação,colocou valor invaldo")
+            initial(3)
 
     else:
         print("Esse comando não existe!")
