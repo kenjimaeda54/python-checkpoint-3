@@ -1,3 +1,6 @@
+from typing import Tuple
+
+
 tuplaStudents = [
     {
         "name": "",
@@ -16,6 +19,11 @@ singLanguage = [""]
 lightCameraAction = [""]
 expressionArtistic = [""]
 spelling = [""]
+worldImagination = [""]
+createEmoji = [""]
+bodySpeak = [""]
+readDramatic = [""]
+readDinamic = [""]
 
 
 workShopMorning = [
@@ -36,112 +44,179 @@ workShopAfternon = [
         "5": ["Leitura dinâmica"],
     }
 ]
-# [getItem] = list(map(lambda y: y["5"], workShopStudentsMorning))
-# i = 0
-# print(getItem)
-# i = 0
-
-# while(i <= len(getItem)):
-#     print(i, "->", getItem[i])
-#     i += 1
-#     if(i == len(getItem)):
-#         break
-
-# list(map(lambda y: print(y, "->", i += 1), getItem))
-# print(armazenaItem)
-# while(i <= len(armazenaItem)):
-#     print(i, "->", armazenaItem)
 
 
-# workShopMorning = [
-#     {
-#         "2": {
-#             "Criar e contar historias": createTellStory,
-#             "A lingua dos sinais": singLanguage,
-#         },
-#         "3": {
-#             "Criar e contar historias": createTellStory,
-#             "Luz camera e ação": lightCameraAction,
-#             "A lingua dos sinais": singLanguage,
-#         },
-#         "4": {
-#             "Luz camera e ação": lightCameraAction,
-#             "A lingua dos sinais": singLanguage,
-#             "Expressão artística": expressionArtistic
-#         },
-#         "5": {
-#             "A lingua dos sinais": singLanguage,
-#             "Soletrando": spelling
-#         },
+def isAddWorkshop(workshopSelected):
+    if(workshopSelected == "Criar e contar historias"):
+        if(len(createTellStory) == 10):
+            return False
+        else:
+            createTellStory.append(workshopSelected)
+            return True
+    if(workshopSelected == "A língua de sinais"):
+        if(len(singLanguage) == 10):
+            return False
+        else:
+            singLanguage.append(workshopSelected)
+            return True
+    if(workshopSelected == "Teatro:Luz camera e ação"):
+        if(len(lightCameraAction) == 10):
+            return False
+        else:
+            lightCameraAction.append(workshopSelected)
+            return True
+    if(workshopSelected == "Expressão Artística"):
+        if(len(expressionArtistic) == 10):
+            return False
+        else:
+            expressionArtistic.append(workshopSelected)
+            return True
+    if(workshopSelected == "Soletrando"):
+        if(len(spelling) == 10):
+            return False
+        else:
+            spelling.append(workshopSelected)
+            return True
+    if(workshopSelected == "O mundo da imaginação"):
+        if(len(worldImagination) == 10):
+            return False
+        else:
+            worldImagination.append(workshopSelected)
+            return True
+    if(workshopSelected == "Criando e recriando emojis"):
+        if(len(createEmoji) == 10):
+            return False
+        else:
+            createEmoji.append(workshopSelected)
+            return True
+    if(workshopSelected == "O Corpo fala"):
+        if(len(bodySpeak) == 10):
+            return False
+        else:
+            bodySpeak.append(workshopSelected)
+            return True
+    if(workshopSelected == "Leitura dramática"):
+        if(len(readDramatic) == 10):
+            return False
+        else:
+            readDramatic.append(workshopSelected)
+            return True
+    if(workshopSelected == "Leitura dinâmica"):
+        if(len(readDinamic) == 10):
+            return False
+        else:
+            readDinamic.append(workshopSelected)
+            return True
 
-#     },
+        # [getItem] = list(map(lambda y: y["5"], workShopStudentsMorning))
+        # i = 0
+        # print(getItem)
+        # i = 0
 
-# ]
+        # while(i <= len(getItem)):
+        #     print(i, "->", getItem[i])
+        #     i += 1
+        #     if(i == len(getItem)):
+        #         break
 
+        # list(map(lambda y: print(y, "->", i += 1), getItem))
+        # print(armazenaItem)
+        # while(i <= len(armazenaItem)):
+        #     print(i, "->", armazenaItem)
 
-# [getSerie] = list(map(lambda student: student, workShopMorning))
-# print(getSerie)
+        # workShopMorning = [
+        #     {
+        #         "2": {
+        #             "Criar e contar historias": createTellStory,
+        #             "A lingua dos sinais": singLanguage,
+        #         },
+        #         "3": {
+        #             "Criar e contar historias": createTellStory,
+        #             "Luz camera e ação": lightCameraAction,
+        #             "A lingua dos sinais": singLanguage,
+        #         },
+        #         "4": {
+        #             "Luz camera e ação": lightCameraAction,
+        #             "A lingua dos sinais": singLanguage,
+        #             "Expressão artística": expressionArtistic
+        #         },
+        #         "5": {
+        #             "A lingua dos sinais": singLanguage,
+        #             "Soletrando": spelling
+        #         },
 
-# worldImagination = [""]
-# creatingEmoji = [""]
-# bodySpeaks = [""],
-# dinamicReading = [""]
+        #     },
 
-# workShopAfternon = [
-#     {
-#         "2": {
-#             "Mundo da imaginação":  worldImagination,
-#             "Criando e recriando emojis": creatingEmoji
-#         },
-#         "3": {
-#             "Corpofala":  bodySpeaks,
-#         },
+        # ]
 
-#         "4": {
-#             "Leitura,dramática":  dinamicReading,
-#         },
-#         "5": {
-#             "Leitura,dinâmica": dinamicReading
+        # [getSerie] = list(map(lambda student: student, workShopMorning))
+        # print(getSerie)
 
-#         }
-#     },
-# ]
+        # worldImagination = [""]
+        # creatingEmoji = [""]
+        # bodySpeaks = [""],
+        # dinamicReading = [""]
 
+        # workShopAfternon = [
+        #     {
+        #         "2": {
+        #             "Mundo da imaginação":  worldImagination,
+        #             "Criando e recriando emojis": creatingEmoji
+        #         },
+        #         "3": {
+        #             "Corpofala":  bodySpeaks,
+        #         },
 
-# workShopMorning = [
-#     {
-#         "2": [createTellStory, "Linguagem de sinais"],
-#         "3": ["Criar e contar historias", "Luz camera e acao", "A lingua dos sinais"],
-#         "4": ["Luz camera e acao", "A lingua dos sinais", "Expressão artística"],
-#         "5": ["A lingua dos sinais", "Soletrando"]
-#     },
+        #         "4": {
+        #             "Leitura,dramática":  dinamicReading,
+        #         },
+        #         "5": {
+        #             "Leitura,dinâmica": dinamicReading
 
-# ]
+        #         }
+        #     },
+        # ]
 
+        # workShopMorning = [
+        #     {
+        #         "2": [createTellStory, "Linguagem de sinais"],
+        #         "3": ["Criar e contar historias", "Luz camera e acao", "A lingua dos sinais"],
+        #         "4": ["Luz camera e acao", "A lingua dos sinais", "Expressão artística"],
+        #         "5": ["A lingua dos sinais", "Soletrando"]
+        #     },
 
-# workShopAftermon = [
-#     {
-#         "2": ["Mundo da imaginação", "Criando e recriando emojis"],
-#         "3": ["Corpo,fala"],
-#         "4": ["Leitura,dramatica"],
-#         "5": ["Leitura,dinamica"]
-#     },
-# ]
+        # ]
 
+        # workShopAftermon = [
+        #     {
+        #         "2": ["Mundo da imaginação", "Criando e recriando emojis"],
+        #         "3": ["Corpo,fala"],
+        #         "4": ["Leitura,dramatica"],
+        #         "5": ["Leitura,dinamica"]
+        #     },
+        # ]
 
-# listNumber = [2, 4, 6]
+        # listNumber = [2, 4, 6]
 
-# numbersMY = list(map(lambda x: x*2, listNumber))
+        # numbersMY = list(map(lambda x: x*2, listNumber))
 
-# lista = ["pera"]
+        # lista = ["pera"]
 
-# listStudents.append({
-#     "workshop": lista
-# })
+        # listStudents.append({
+        #     "workshop": lista
+        # })
 
-# print(listStudents)
+        # print(listStudents)
+
 
 def initial(selected):
+    if(selected == 5):
+        print(listStudents)
+        print("\n")
+        selected = int(input(
+            "Digite 2 para fazer inscricoes\n"
+            "Digite 3 para listar as inscricoes\n"
+            "Digite 4 para sair do programa\n"))
     if(selected == 0):
         print(listStudents)
         print("\n")
@@ -150,33 +225,40 @@ def initial(selected):
             "Digite 2 para fazer inscricoes\n"
             "Digite 3 para listar as inscricoes\n"
             "Digite 4 para sair do programa\n"))
-    if(selected == 1):
-        studentsRm = str(input("\nDigite o RM do aluno: "))
-        studentsName = str(input("Digite o nome do aluno: "))
-        studentsSerie = int(input(
-            "Por favor coloque  a serie que o aluno esta cursando:\n"
-            "Digite 2 para segunda serie\n"
-            "Digite 3 para terceira serie \n"
-            "Digite 4 para quarta serie\n"
-            "Digite 5 para quinta serie\n"))
-        if studentsSerie == 2 or studentsSerie == 3 or studentsSerie == 4 or studentsSerie == 5:
-            resultsRm = list(
-                filter(lambda students: students["rm"] == studentsRm, listStudents))
-            if(resultsRm):
-                print("\nPor favor verifique suas credenciais rm igual")
-                initial(0)
-            else:
-                listStudents.append({
-                    "name": studentsName,
-                    "rm": studentsRm,
-                    "serie": studentsSerie,
-                    "workshop": []
-                }),
+        if(selected == 1):
+            def registerStudents(choose):
+                if(choose == 1):
+                    studentsRm = int(input("\nDigite o RM do aluno: "))
+                    if(studentsRm == 0):
+                        return initial(5)
+                    elif(studentsRm != 0):
+                        studentsName = str(input("Digite o nome do aluno: "))
+                        studentsSerie = int(input(
+                            "Por favor coloque  a serie que o aluno esta cursando:\n"
+                            "Digite 2 para segunda serie\n"
+                            "Digite 3 para terceira serie \n"
+                            "Digite 4 para quarta serie\n"
+                            "Digite 5 para quinta serie\n"))
+                        if studentsSerie == 2 or studentsSerie == 3 or studentsSerie == 4 or studentsSerie == 5:
+                            resultsRm = list(
+                                filter(lambda students: students["rm"] == str(studentsRm), listStudents))
+                            if(resultsRm):
+                                print(
+                                    "\nPor favor verifique suas credenciais rm igual")
+                                registerStudents(1)
+                            else:
+                                listStudents.append({
+                                    "name": studentsName,
+                                    "rm": str(studentsRm),
+                                    "serie": studentsSerie,
+                                    "workshop": []
+                                }),
 
-                initial(0)
-        else:
-            print("\nDigitou opção invalida repita operação")
-            initial(0)
+                                registerStudents(1)
+                        else:
+                            print("\nDigitou opção invalida repita operação")
+                            registerStudents(1)
+            registerStudents(1)
     if(selected == 2):
         requestRm = str(input("\nPor favor digite o RM do aluno:"))
         checkRmStudents = list(
@@ -187,7 +269,7 @@ def initial(selected):
                     getSerieStudent = str(students["serie"])
                     [getWorkShopMorning] = list(
                         map(lambda students: students[getSerieStudent], workShopMorning))
-                    print("0 --> Segue abaixo as oficinais no periodo da manha")
+                    print("--> Segue abaixo as oficinais no periodo da manha")
                     i = 0
                     if(i == len(getWorkShopMorning)):
                         print(i, "-->", getWorkShopMorning[i])
@@ -204,7 +286,7 @@ def initial(selected):
                 i = 0
                 [getWorkShopAftermon] = list(
                     map(lambda students: students[getSerieStudent], workShopAfternon))
-                print("\n 1--> Segue abaixo as oficinais no periodo do verpertino")
+                print("\n --> Segue abaixo as oficinais no periodo do verpertino")
                 if(i == len(getWorkShopAftermon)):
                     print(i, "-->", getWorkShopAftermon[i])
                     return getChoseUser(getSerieStudent, getWorkShopAftermon, getWorkShopMorning, requestRm)
@@ -212,7 +294,7 @@ def initial(selected):
                     while(i <= len(getWorkShopAftermon)):
                         print(i, "-->", getWorkShopAftermon[i])
                         i += 1
-                        if(i <= len(getWorkShopAftermon)):
+                        if(i == len(getWorkShopAftermon)):
                             return getChoseUser(getSerieStudent, getWorkShopAftermon, getWorkShopMorning, requestRm)
 
             def getChoseUser(series, workShopAfternon, workShopMorning, requestRm):
@@ -226,32 +308,37 @@ def initial(selected):
                 elif(selectedPeriod == 0):
                     selectedWorkshop = int(input(
                         "Agora digite o numero que esta ao lado esquerdo da oficina que voce deseja cadastrar: "))
-                    if(selectedWorkshop > len(workShopMorning)):
+                    if(selectedWorkshop >= len(workShopMorning)):
                         print(
                             "Opção invalida Selecione numero de acordo com os valores na esquerda da oficina")
                         getChoseUser(series, workShopAfternon,
                                      workShopMorning, requestRm)
                     else:
                         workshop = workShopMorning[selectedWorkshop]
-                        # listWorkshop = ("workshop", workshop)
 
                         def getListOfRm(x):
                             if(x["rm"] == requestRm):
-                                if(len(x["workshop"]) == 2):
+                                checkWorkshop = list(filter(lambda x: x ==
+                                                            workshop, x["workshop"]))
+                                if(checkWorkshop):
                                     print(
-                                        "Aluno ja atingiu a quantidade maxima permitida")
-                                    initial(0)
+                                        "Nao foi possível registrar,voce ja possui essa oficina no cadastro")
+                                    initial(5)
                                 else:
                                     x.setdefault(
                                         "workshop", []).append(workshop)
-
-                        list(filter(getListOfRm, listStudents))
-                        print("Cadastro com sucesso!")
-                        initial(0)
+                                    quantity = len(x["workshop"])
+                                    print("Cadastro feito sucesso!")
+                                    print("Voce possui no total", quantity, quantity >=
+                                          2 and "inscrições" or "inscrição")
+                                    initial(5)
+                        isAddWorkshop(workshop) and list(
+                            filter(getListOfRm, listStudents)) or print("Esta oficina atingiu o limite de registros")
+                        initial(5)
                 elif(selectedPeriod == 1):
                     selectedWorkshop = int(input(
                         "Agora digite o numero que esta ao lado esquerdo da oficina que voce deseja cadastrar: "))
-                    if(selectedWorkshop > len(workShopMorning)):
+                    if(selectedWorkshop >= len(workShopAfternon)):
                         print(
                             "Opção invalida Selecione numero de acordo com os valores na esquerda da oficina")
                         getChoseUser(series, workShopAfternon,
@@ -262,25 +349,28 @@ def initial(selected):
 
                         def getListOfRm(x):
                             if(x["rm"] == requestRm):
-                                if(len(x["workshop"]) == 2):
+                                checkWorkshop = list(filter(lambda x: x ==
+                                                            workshop, x["workshop"]))
+                                if(checkWorkshop):
                                     print(
-                                        "Aluno ja atingiu a quantidade maxima permitida")
-                                    initial(0)
+                                        "Nao foi possível registrar,voce ja possui essa oficina no cadastro")
+                                    initial(5)
                                 else:
                                     x.setdefault(
                                         "workshop", []).append(workshop)
-
-                    list(filter(getListOfRm, listStudents))
-                    print("Cadastro com sucesso!")
-                    initial(0)
+                                    quantity = len(x["workshop"])
+                                    print("Cadastro feito sucesso!")
+                                    print("Voce possui no total", quantity, quantity >=
+                                          2 and "inscrições" or "inscrição")
+                                    initial(5)
+                        isAddWorkshop(workshop) and list(
+                            filter(getListOfRm, listStudents)) or print("Esta oficina atingiu o limite de registros")
+                    initial(5)
             list(map(getSerieStudent, listStudents))
-        # getWorkshop = list(
-        #     map(lambda students: students == requestRm, workShopMorning))
-        # print("Oficinas disponíveis no peridodo da manha", getWorkshop)
         else:
             print(
                 "\nALuno não cadastrado.Por favor procurar a coordenação do Fundamental 1 ")
-            initial(0)
+            initial(5)
 
     # if(selected == 3):
     #     print("Numero 3 foi chamado")
