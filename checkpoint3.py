@@ -235,11 +235,10 @@ def initial(selected):
             print("***** Alunos inscritos – Ordem: Alfabética (Oficinas) *****")
 
             def byOrderWorkshop(students):
-                print("Oficinas")
                 if(len(students["workshop"]) > 0):
                     i = 1
                     for x in range(len(students["workshop"])):
-                        print("\n")
+                        print("\nOficinas")
                         formatedWorkshop(students["workshop"][x])
                         print("RM", students["rm"], "---",
                               students["name"], "---", students["serie"])
