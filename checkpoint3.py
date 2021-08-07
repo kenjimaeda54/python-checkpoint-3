@@ -12,7 +12,6 @@ tuplaStudents = [
 
 [listStudents] = list(tuplaStudents)
 
-listStudents.append
 
 createTellStory = [""]
 singLanguage = [""]
@@ -56,7 +55,7 @@ def initial(selected):
     if(selected == 0):
         print("\n")
         selected = int(input(
-            "Digite de 1 para cadastrar alunos\n"
+            "Digite 1 para cadastrar alunos\n"
             "Digite 2 para fazer inscricoes\n"
             "Digite 3 para listar as inscricoes\n"
             "Digite 4 para sair do programa\n"))
@@ -94,6 +93,9 @@ def initial(selected):
                             print("\nDigitou opção invalida repita operação")
                             registerStudents(1)
             registerStudents(1)
+
+    if(selected == 4):
+        return print("Ate logo")
     if(selected == 2):
         requestRm = str(input("\nPor favor digite o RM do aluno:"))
         checkRmStudents = list(
@@ -121,7 +123,7 @@ def initial(selected):
                 i = 0
                 [getWorkShopAftermon] = list(
                     map(lambda students: students[getSerieStudent], workShopAfternon))
-                print("\n --> Segue abaixo as oficinais no periodo do verpertino")
+                print("\n --> Segue abaixo as oficinais no periodo do vespertino")
                 if(i == len(getWorkShopAftermon)):
                     print(i, "-->", getWorkShopAftermon[i])
                     return getChoseUser(getSerieStudent, getWorkShopAftermon, getWorkShopMorning, requestRm)
@@ -164,8 +166,8 @@ def initial(selected):
                                         "workshop", []).append(workshop)
                                     quantity = len(x["workshop"])
                                     print("Cadastro feito sucesso!")
-                                    print("Voce possui no total", quantity, quantity >=
-                                          2 and "inscrições" or "inscrição")
+                                    print("Voce possui no total", quantity,
+                                          quantity >= 2 and "inscrições" or "inscrição")
                                     initial(5)
                         isAddWorkshop(workshop) and list(
                             filter(getListOfRm, listStudents)) or print("Esta oficina atingiu o limite de registros")
@@ -209,7 +211,9 @@ def initial(selected):
 
     if(selected == 3):
         selectedOption = int(
-            input("Selecione 1 para listar por aluno ou 2 por lista de oficina:"))
+            input("Menu Listar inscrições\n"
+                  "1 -Listar por aluno (ordem alfabética de nome)\n"
+                  "2 -Listar por oficina(ordem alfabética)\n"))
         if(selectedOption == 1):
             print("***** Alunos inscritos – Ordem: Alfabética (nome) *****")
 
@@ -251,13 +255,9 @@ def initial(selected):
             newList = sorted(
                 listStudents, key=lambda student: student["workshop"])
             list(map(byOrderWorkshop, newList))
-
         else:
             print("Por favor repita a operação,colocou valor invaldo")
             initial(3)
-
-    else:
-        print("Esse comando não existe!")
 
 
 def formatedWorkshop(workShop):
