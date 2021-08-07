@@ -175,7 +175,4 @@ Essa função,primeiro definimos uma chave,no caso o nome era "workshop". Caso e
 - Funções
 - Listas
 - Recursividade
-<<<<<<< HEAD
-=======
 - Laços
->>>>>>> ea796b9fbd322fe7c1f57718604bcb84fa578519
