@@ -1,5 +1,3 @@
-from typing import Tuple
-
 
 tuplaStudents = [
     {
@@ -48,202 +46,14 @@ workShopAfternon = [
 ]
 
 
-def formatedWorkshop(workShop):
-    if(workShop == "Criar e contar historias"):
-        return print(workShop, ",segunda-feira, matutino")
-    if(workShop == "A língua de sinais"):
-        return print(workShop, ",quarta-feira,matutino")
-    if(workShop == "Teatro:Luz camera e ação"):
-        return print(workShop, ",terça-feria,matutino")
-    if(workShop == "Expressão Artística"):
-        return print(workShop, ",quinta-feira,matutino")
-    if(workShop == "Soletrando"):
-        return print(workShop, ",sexta-feira, matutino")
-    if(workShop == "O mundo da imaginação"):
-        return print(workShop, ",quarta-feira, vespertino")
-    if(workShop == "Criando e recriando emojis"):
-        return print(workShop, ",sexta-feira,vespertino")
-    if(workShop == "O Corpo fala"):
-        return print(workShop, ",terça-feira,vespertino")
-    if(workShop == "Leitura dramática"):
-        return print(workShop, ",segunda-feira,vespertino")
-    if(workShop == "Leitura dinâmica"):
-        return print(workShop, ",quinta-feira,vespertino")
-
-
-def isAddWorkshop(workshopSelected):
-    if(workshopSelected == "Criar e contar historias"):
-        if(len(createTellStory) == 10):
-            return False
-        else:
-            createTellStory.append(workshopSelected)
-            return True
-    if(workshopSelected == "A língua de sinais"):
-        if(len(singLanguage) == 10):
-            return False
-        else:
-            singLanguage.append(workshopSelected)
-            return True
-    if(workshopSelected == "Teatro:Luz camera e ação"):
-        if(len(lightCameraAction) == 10):
-            return False
-        else:
-            lightCameraAction.append(workshopSelected)
-            return True
-    if(workshopSelected == "Expressão Artística"):
-        if(len(expressionArtistic) == 10):
-            return False
-        else:
-            expressionArtistic.append(workshopSelected)
-            return True
-    if(workshopSelected == "Soletrando"):
-        if(len(spelling) == 10):
-            return False
-        else:
-            spelling.append(workshopSelected)
-            return True
-    if(workshopSelected == "O mundo da imaginação"):
-        if(len(worldImagination) == 10):
-            return False
-        else:
-            worldImagination.append(workshopSelected)
-            return True
-    if(workshopSelected == "Criando e recriando emojis"):
-        if(len(createEmoji) == 10):
-            return False
-        else:
-            createEmoji.append(workshopSelected)
-            return True
-    if(workshopSelected == "O Corpo fala"):
-        if(len(bodySpeak) == 10):
-            return False
-        else:
-            bodySpeak.append(workshopSelected)
-            return True
-    if(workshopSelected == "Leitura dramática"):
-        if(len(readDramatic) == 10):
-            return False
-        else:
-            readDramatic.append(workshopSelected)
-            return True
-    if(workshopSelected == "Leitura dinâmica"):
-        if(len(readDinamic) == 10):
-            return False
-        else:
-            readDinamic.append(workshopSelected)
-            return True
-
-        # [getItem] = list(map(lambda y: y["5"], workShopStudentsMorning))
-        # i = 0
-        # print(getItem)
-        # i = 0
-
-        # while(i <= len(getItem)):
-        #     print(i, "->", getItem[i])
-        #     i += 1
-        #     if(i == len(getItem)):
-        #         break
-
-        # list(map(lambda y: print(y, "->", i += 1), getItem))
-        # print(armazenaItem)
-        # while(i <= len(armazenaItem)):
-        #     print(i, "->", armazenaItem)
-
-        # workShopMorning = [
-        #     {
-        #         "2": {
-        #             "Criar e contar historias": createTellStory,
-        #             "A lingua dos sinais": singLanguage,
-        #         },
-        #         "3": {
-        #             "Criar e contar historias": createTellStory,
-        #             "Luz camera e ação": lightCameraAction,
-        #             "A lingua dos sinais": singLanguage,
-        #         },
-        #         "4": {
-        #             "Luz camera e ação": lightCameraAction,
-        #             "A lingua dos sinais": singLanguage,
-        #             "Expressão artística": expressionArtistic
-        #         },
-        #         "5": {
-        #             "A lingua dos sinais": singLanguage,
-        #             "Soletrando": spelling
-        #         },
-
-        #     },
-
-        # ]
-
-        # [getSerie] = list(map(lambda student: student, workShopMorning))
-        # print(getSerie)
-
-        # worldImagination = [""]
-        # creatingEmoji = [""]
-        # bodySpeaks = [""],
-        # dinamicReading = [""]
-
-        # workShopAfternon = [
-        #     {
-        #         "2": {
-        #             "Mundo da imaginação":  worldImagination,
-        #             "Criando e recriando emojis": creatingEmoji
-        #         },
-        #         "3": {
-        #             "Corpofala":  bodySpeaks,
-        #         },
-
-        #         "4": {
-        #             "Leitura,dramática":  dinamicReading,
-        #         },
-        #         "5": {
-        #             "Leitura,dinâmica": dinamicReading
-
-        #         }
-        #     },
-        # ]
-
-        # workShopMorning = [
-        #     {
-        #         "2": [createTellStory, "Linguagem de sinais"],
-        #         "3": ["Criar e contar historias", "Luz camera e acao", "A lingua dos sinais"],
-        #         "4": ["Luz camera e acao", "A lingua dos sinais", "Expressão artística"],
-        #         "5": ["A lingua dos sinais", "Soletrando"]
-        #     },
-
-        # ]
-
-        # workShopAftermon = [
-        #     {
-        #         "2": ["Mundo da imaginação", "Criando e recriando emojis"],
-        #         "3": ["Corpo,fala"],
-        #         "4": ["Leitura,dramatica"],
-        #         "5": ["Leitura,dinamica"]
-        #     },
-        # ]
-
-        # listNumber = [2, 4, 6]
-
-        # numbersMY = list(map(lambda x: x*2, listNumber))
-
-        # lista = ["pera"]
-
-        # listStudents.append({
-        #     "workshop": lista
-        # })
-
-        # print(listStudents)
-
-
 def initial(selected):
     if(selected == 5):
-        print(listStudents)
         print("\n")
         selected = int(input(
             "Digite 2 para fazer inscricoes\n"
             "Digite 3 para listar as inscricoes\n"
             "Digite 4 para sair do programa\n"))
     if(selected == 0):
-        print(listStudents)
         print("\n")
         selected = int(input(
             "Digite de 1 para cadastrar alunos\n"
@@ -403,22 +213,44 @@ def initial(selected):
         if(selectedOption == 1):
             print("***** Alunos inscritos – Ordem: Alfabética (nome) *****")
 
-            def printUser(students):
+            def byOderName(students):
                 if(students["name"]):
                     print("\nRm:", students["rm"], "--", students["name"],
                           "--", students["serie"], "৹.serie",)
-                    print("Oficina")
-                    # listWorkshop = list(
-                    #     map(lambda x: x, students["workshop"]))
                     if(len(students["workshop"]) > 0):
+                        print("Oficina")
+                        i = 1
                         for x in range(len(students["workshop"])):
                             formatedWorkshop(students["workshop"][x])
+                            i += 1
+                        if(i == len(students["workshop"])):
+                            initial(5)
                     else:
                         return
 
             newList = sorted(listStudents, key=lambda student: student["name"])
-            list(map(printUser, newList))
+            list(map(byOderName, newList))
             initial(5)
+        elif(selectedOption == 2):
+            print("***** Alunos inscritos – Ordem: Alfabética (Oficinas) *****")
+
+            def byOrderWorkshop(students):
+                print("Oficinas")
+                if(len(students["workshop"]) > 0):
+                    i = 1
+                    for x in range(len(students["workshop"])):
+                        print("\n")
+                        formatedWorkshop(students["workshop"][x])
+                        print("RM", students["rm"], "---",
+                              students["name"], "---", students["serie"])
+                        i += 1
+                    if(i == len(students["workshop"])):
+                        initial(5)
+                else:
+                    return
+            newList = sorted(
+                listStudents, key=lambda student: student["workshop"])
+            list(map(byOrderWorkshop, newList))
 
         else:
             print("Por favor repita a operação,colocou valor invaldo")
@@ -426,6 +258,92 @@ def initial(selected):
 
     else:
         print("Esse comando não existe!")
+
+
+def formatedWorkshop(workShop):
+    if(workShop == "Criar e contar historias"):
+        return print(workShop, ",segunda-feira, matutino")
+    if(workShop == "A língua de sinais"):
+        return print(workShop, ",quarta-feira,matutino")
+    if(workShop == "Teatro:Luz camera e ação"):
+        return print(workShop, ",terça-feria,matutino")
+    if(workShop == "Expressão Artística"):
+        return print(workShop, ",quinta-feira,matutino")
+    if(workShop == "Soletrando"):
+        return print(workShop, ",sexta-feira, matutino")
+    if(workShop == "O mundo da imaginação"):
+        return print(workShop, ",quarta-feira, vespertino")
+    if(workShop == "Criando e recriando emojis"):
+        return print(workShop, ",sexta-feira,vespertino")
+    if(workShop == "O Corpo fala"):
+        return print(workShop, ",terça-feira,vespertino")
+    if(workShop == "Leitura dramática"):
+        return print(workShop, ",segunda-feira,vespertino")
+    if(workShop == "Leitura dinâmica"):
+        return print(workShop, ",quinta-feira,vespertino")
+
+
+def isAddWorkshop(workshopSelected):
+    if(workshopSelected == "Criar e contar historias"):
+        if(len(createTellStory) == 10):
+            return False
+        else:
+            createTellStory.append(workshopSelected)
+            return True
+    if(workshopSelected == "A língua de sinais"):
+        if(len(singLanguage) == 10):
+            return False
+        else:
+            singLanguage.append(workshopSelected)
+            return True
+    if(workshopSelected == "Teatro:Luz camera e ação"):
+        if(len(lightCameraAction) == 10):
+            return False
+        else:
+            lightCameraAction.append(workshopSelected)
+            return True
+    if(workshopSelected == "Expressão Artística"):
+        if(len(expressionArtistic) == 10):
+            return False
+        else:
+            expressionArtistic.append(workshopSelected)
+            return True
+    if(workshopSelected == "Soletrando"):
+        if(len(spelling) == 10):
+            return False
+        else:
+            spelling.append(workshopSelected)
+            return True
+    if(workshopSelected == "O mundo da imaginação"):
+        if(len(worldImagination) == 10):
+            return False
+        else:
+            worldImagination.append(workshopSelected)
+            return True
+    if(workshopSelected == "Criando e recriando emojis"):
+        if(len(createEmoji) == 10):
+            return False
+        else:
+            createEmoji.append(workshopSelected)
+            return True
+    if(workshopSelected == "O Corpo fala"):
+        if(len(bodySpeak) == 10):
+            return False
+        else:
+            bodySpeak.append(workshopSelected)
+            return True
+    if(workshopSelected == "Leitura dramática"):
+        if(len(readDramatic) == 10):
+            return False
+        else:
+            readDramatic.append(workshopSelected)
+            return True
+    if(workshopSelected == "Leitura dinâmica"):
+        if(len(readDinamic) == 10):
+            return False
+        else:
+            readDinamic.append(workshopSelected)
+            return True
 
 
 print("Ola seja bem vindo")
