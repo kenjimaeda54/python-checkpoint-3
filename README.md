@@ -31,8 +31,7 @@ Checkpoint 3.
 ![python](https://img.shields.io/badge/-reactnative-212121?style=flat-square&logo=python&logoColor=white)
 =======
 ![python](https://img.shields.io/badge/-python-212121?style=flat-square&logo=python&logoColor=white)
->>>>>>> ea796b9fbd322fe7c1f57718604bcb84fa578519
-!
+
 
 ## O que eu aprendemos
 
