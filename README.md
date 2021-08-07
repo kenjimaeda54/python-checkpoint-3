@@ -27,7 +27,11 @@ Checkpoint 3.
 
 ![VSCode](https://img.shields.io/badge/-VSCode-0085D1?style=flat-square&logo=visual-studio-code&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
+<<<<<<< HEAD
 ![python](https://img.shields.io/badge/-reactnative-212121?style=flat-square&logo=python&logoColor=white)
+=======
+![python](https://img.shields.io/badge/-python-212121?style=flat-square&logo=python&logoColor=white)
+>>>>>>> ea796b9fbd322fe7c1f57718604bcb84fa578519
 !
 
 ## O que eu aprendemos
@@ -174,3 +178,7 @@ Essa função,primeiro definimos uma chave,no caso o nome era "workshop". Caso e
 - Funções
 - Listas
 - Recursividade
+<<<<<<< HEAD
+=======
+- Laços
+>>>>>>> ea796b9fbd322fe7c1f57718604bcb84fa578519
