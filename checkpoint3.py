@@ -11,6 +11,7 @@ tuplaStudents = [
 
 ],
 
+
 [listStudents] = list(tuplaStudents)
 
 listStudents.append
@@ -30,8 +31,8 @@ readDinamic = [""]
 workShopMorning = [
     {
         "2": ["Criar e contar historias", "A língua de sinais"],
-        "3": ["Criar e contar historias", "Teatro:Luz camera e ação", " A língua de sinais"],
-        "4": ["Teatro: luz camera e ação", "Expressão Artística"],
+        "3": ["Criar e contar historias", "Teatro:Luz camera e ação", "A língua de sinais"],
+        "4": ["Teatro:Luz camera e ação", "Expressão Artística"],
         "5": ["A língua de sinais", "Soletrando", "Expressão Artística"]
     },
 ]
@@ -45,6 +46,29 @@ workShopAfternon = [
         "5": ["Leitura dinâmica"],
     }
 ]
+
+
+def formatedWorkshop(workShop):
+    if(workShop == "Criar e contar historias"):
+        return print(workShop, ",segunda-feira, matutino")
+    if(workShop == "A língua de sinais"):
+        return print(workShop, ",quarta-feira,matutino")
+    if(workShop == "Teatro:Luz camera e ação"):
+        return print(workShop, ",terça-feria,matutino")
+    if(workShop == "Expressão Artística"):
+        return print(workShop, ",quinta-feira,matutino")
+    if(workShop == "Soletrando"):
+        return print(workShop, ",sexta-feira, matutino")
+    if(workShop == "O mundo da imaginação"):
+        return print(workShop, ",quarta-feira, vespertino")
+    if(workShop == "Criando e recriando emojis"):
+        return print(workShop, ",sexta-feira,vespertino")
+    if(workShop == "O Corpo fala"):
+        return print(workShop, ",terça-feira,vespertino")
+    if(workShop == "Leitura dramática"):
+        return print(workShop, ",segunda-feira,vespertino")
+    if(workShop == "Leitura dinâmica"):
+        return print(workShop, ",quinta-feira,vespertino")
 
 
 def isAddWorkshop(workshopSelected):
@@ -375,17 +399,25 @@ def initial(selected):
 
     if(selected == 3):
         selectedOption = int(
-            input("Selecione 1 para listar por aluno ou 2 por lista de oficina"))
+            input("Selecione 1 para listar por aluno ou 2 por lista de oficina:"))
         if(selectedOption == 1):
             print("***** Alunos inscritos – Ordem: Alfabética (nome) *****")
+
+            def printUser(students):
+                if(students["name"]):
+                    print("\nRm:", students["rm"], "--", students["name"],
+                          "--", students["serie"], "৹.serie",)
+                    print("Oficina")
+                    # listWorkshop = list(
+                    #     map(lambda x: x, students["workshop"]))
+                    if(len(students["workshop"]) > 0):
+                        for x in range(len(students["workshop"])):
+                            formatedWorkshop(students["workshop"][x])
+                    else:
+                        return
+
             newList = sorted(listStudents, key=lambda student: student["name"])
-            getRm = list(map(lambda x: x["rm"], newList))
-            getName = list(map(lambda x: x["name"], newList))
-            getSerie = list(map(lambda x: x["serie"], newList))
-            getWorkShop = list(map(lambda x: x["workshop"], newList))
-            print("RM:", getRm, "-", getName, "-", getSerie)
-            print("Oficina")
-            print(getWorkShop)
+            list(map(printUser, newList))
             initial(5)
 
         else:
