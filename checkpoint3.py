@@ -10,6 +10,19 @@ tuplaStudents = [
 ],
 
 
+tuplaOrdemWorkshop = [
+    {
+        "name": "",
+        "rm": "",
+        "serie": "",
+        "workshop": ""
+
+    }
+],
+
+
+[listOrdemWorkshop] = list(tuplaOrdemWorkshop)
+
 [listStudents] = list(tuplaStudents)
 
 
@@ -52,6 +65,9 @@ def initial(selected):
             "Digite 2 para fazer inscricoes\n"
             "Digite 3 para listar as inscricoes\n"
             "Digite 4 para sair do programa\n"))
+    if(selected == 1):
+        print("Nao e possível cadastrar alunos")
+        initial(5)
     if(selected == 0):
         print("\n")
         selected = int(input(
@@ -240,20 +256,18 @@ def initial(selected):
 
             def byOrderWorkshop(students):
                 if(len(students["workshop"]) > 0):
-                    i = 1
-                    for x in range(len(students["workshop"])):
-                        print("\nOficinas")
-                        formatedWorkshop(students["workshop"][x])
-                        print("RM", students["rm"], "---",
-                              students["name"], "---", students["serie"])
-                        i += 1
-                    if(i == len(students["workshop"])):
-                        initial(5)
-                else:
-                    return
+                    for i in range(len(students["workshop"])):
+                        listOrdemWorkshop.append({
+                            "name": students.get("name"),
+                            "rm": students.get("rm"),
+                            "serie": students.get('serie'),
+                            "workshop": students["workshop"][i]
+                        })
             newList = sorted(
                 listStudents, key=lambda student: student["workshop"])
             list(map(byOrderWorkshop, newList))
+            showStudents()
+
         else:
             print("Por favor repita a operação,colocou valor invaldo")
             initial(3)
@@ -343,6 +357,20 @@ def isAddWorkshop(workshopSelected):
         else:
             readDinamic.append(workshopSelected)
             return True
+
+
+def showStudents():
+    getWorkshop = sorted(listOrdemWorkshop, key=lambda x: x["workshop"])
+    print("Oficinas")
+
+    def showStudentsOrder(students):
+        if(students.get("name") != ""):
+            formatedWorkshop(students.get("workshop"))
+            print("RM:", students.get("rm"), "--", students.get("name"),
+                  "--", students.get("serie"), "•.serie")
+            print("\n")
+    list(map(showStudentsOrder, getWorkshop))
+    initial(5)
 
 
 print("Ola seja bem vindo")
